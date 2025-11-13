@@ -15,6 +15,7 @@ body {
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
+    background-attachment: scroll; /* evita problemas em mobile */
     color: #ffffff;
     min-height: 100vh;
     display: flex;
@@ -41,7 +42,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between; /* manter footer embaixo */
-    min-height: calc(100vh - 12px); /* reduzir para evitar scroll causado por paddings/bordas */
+    min-height: 100vh; /* garantir que o container preencha a tela */
 }
 
 /* Top logo (small) */
@@ -68,7 +69,7 @@ body {
 }
 
 .hero {
-    padding: 14px 16px; /* reduzir padding para subir conteúdo */
+    padding: 12px 14px; /* reduzir padding para subir conteúdo */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -79,15 +80,16 @@ body {
 
 .title {
     color: #ff0000;
-    font-size: 1.9rem;
+    font-size: clamp(1.6rem, 6vw, 2.2rem);
     text-transform: none;
     margin: 0 0 8px 0; /* remover margin-top e reduzir bottom */
+    line-height: 1.1;
 }
 
 .lead {
     color: #e6e6e6;
-    font-size: 1rem;
-    line-height: 1.5;
+    font-size: clamp(0.95rem, 3.5vw, 1.05rem);
+    line-height: 1.45;
     margin-bottom: 8px;
 }
 
@@ -95,6 +97,7 @@ body {
     color: #fff;
     font-weight: 700;
     margin-bottom: 12px;
+    font-size: clamp(0.98rem, 3.8vw, 1.05rem);
 }
 
 header h1 {
@@ -219,8 +222,8 @@ main {
     gap: 12px;
     background: linear-gradient(135deg, #ff0000 0%, #cc0000 100%);
     color: #ffffff;
-    padding: 18px 30px;
-    font-size: 1.1rem;
+    padding: clamp(12px, 3vw, 18px) clamp(20px, 6vw, 30px);
+    font-size: clamp(1rem, 4vw, 1.15rem);
     font-weight: 800;
     text-decoration: none;
     border-radius: 50px;
