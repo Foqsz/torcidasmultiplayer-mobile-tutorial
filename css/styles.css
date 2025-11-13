@@ -6,6 +6,7 @@
 
 html, body {
     height: 100%;
+    overflow: hidden; /* remover barras de rolagem na página */
 }
 
 body {
@@ -45,7 +46,7 @@ body {
 
 /* Fazer o container preencher a viewport e usar layout em coluna */
 .container {
-    min-height: calc(100vh - 6px);
+    height: 100vh; /* garantir que o container ocupe toda a viewport */
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -99,8 +100,17 @@ header h1 {
 }
 
 main {
-    padding: 12px 10px; /* menos padding para subir conteúdo */
+    padding: 5px 5px; /* menos padding para subir conteúdo */
     flex: 1; /* permite que o main ocupe o espaço disponível e empurre o footer para baixo */
+    overflow: hidden; /* evitar scroll interno */
+}
+
+/* ícone small inline ao lado do texto DOWNLOAD */
+.inline-download-icon {
+    width: 14px;
+    height: 14px;
+    vertical-align: middle;
+    margin-right: 6px;
 }
 
 .download-section h2 {
@@ -273,6 +283,58 @@ main {
     }
 }
 
+/* Botão de vídeo tutorial: usar o mesmo visual do botão principal de download */
+.video-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    background: linear-gradient(135deg, #ff0000 0%, #cc0000 100%);
+    color: #ffffff;
+    padding: 18px 30px;
+    font-size: clamp(1rem, 3.5vw, 1.3rem);
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 50px;
+    box-shadow: 0 10px 30px rgba(255, 0, 0, 0.4);
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+}
+
+.video-btn:active {
+    transform: scale(0.95);
+    box-shadow: 0 5px 20px rgba(255, 0, 0, 0.5);
+}
+
+@media (min-width: 769px) {
+    .video-btn:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 40px rgba(255, 0, 0, 0.6);
+        background: linear-gradient(135deg, #cc0000 0%, #ff0000 100%);
+    }
+
+    .video-btn:active {
+        transform: translateY(-2px);
+    }
+
+    .video-btn {
+        max-width: 300px;
+    }
+}
+
+.video-icon {
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
+    animation: bounce 2s infinite;
+}
+
 @keyframes bounce {
     0%, 100% {
         transform: translateY(0);
@@ -330,6 +392,22 @@ footer {
 footer p {
     color: #cccccc;
     font-size: 0.9rem;
+}
+
+.footer-meta {
+    margin-top: 2px; /* reduzir espaço entre linhas do footer */
+}
+
+.privacy-link {
+    color: rgba(255,255,255,0.78);
+    font-size: 0.8rem;
+    text-decoration: none;
+    opacity: 0.85;
+}
+
+.privacy-link:hover {
+    opacity: 1;
+    text-decoration: underline;
 }
 
 /* Responsividade Mobile-First */
