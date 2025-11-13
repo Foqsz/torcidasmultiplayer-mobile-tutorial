@@ -42,7 +42,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between; /* manter footer embaixo */
-    min-height: 100vh; /* garantir que o container preencha a tela */
+    /* min-height: 100vh; garantir que o container preencha a tela */
 }
 
 /* Top logo (small) */
