@@ -263,7 +263,50 @@ main {
     flex-shrink: 0;
 }
 
-/* Botão WhatsApp */
+/* Botão Suporte (WhatsApp) */
+.support-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background: linear-gradient(135deg, #25D366 0%, #1DA851 100%);
+    color: #ffffff;
+    padding: clamp(12px, 3vw, 18px) clamp(20px, 6vw, 30px);
+    font-size: clamp(1rem, 4vw, 1.15rem);
+    font-weight: 800;
+    text-decoration: none;
+    border-radius: 50px;
+    box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
+    transition: all 0.25s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    width: 100%;
+    max-width: 420px;
+    text-align: center;
+}
+
+.support-btn:active {
+    transform: translateY(-2px);
+}
+
+@media (min-width: 769px) {
+    .support-btn:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 40px rgba(37, 211, 102, 0.4);
+        background: linear-gradient(135deg, #1DA851 0%, #25D366 100%);
+    }
+
+    .support-btn:active {
+        transform: translateY(-2px);
+    }
+}
+
+.support-icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
 /* footer */
 footer {
     background: rgba(0, 0, 0, 0.45);
